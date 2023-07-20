@@ -2,12 +2,12 @@
 .navbar{
     border:solid black;
     border-width:.2px;
-    height:40px;
+    height:60px;
     margin:1em;
     display:flex;
 }
 .options{
-    border:solid green;
+    border:solid black;
     border-width:.2px;
     /* height:340px; */
     margin:1em;
@@ -15,13 +15,13 @@
     justify-content: space-around;
 }
 .mainImg{
-    border:solid blue;
+    border:solid black;
     border-width:.2px;
     height:440px;
     margin:1em;
 }
 .productContainer{
-    border:solid red;
+    border:solid black;
     border-width:.2px;
     height:740px;
     margin:1em;
@@ -29,35 +29,44 @@
     flex-wrap:wrap;
 }
 .displayMain{
-    border:solid peru;
+    border:solid black;
     border-width:.2px;
     height:340px;
     margin:1em;
     display:flex;
     justify-content: space-between;
 }
+.logo{
+    border: solid black;
+    width: 40%;
+    height: 60px;
+    display: flex;
+    align-content: center;
+}
 .logoContainer{
-    border:solid purple;
     width:40%;
+    height: 60px;
+    padding-bottom: 20px;
 }
 .tabContainer{
-border:solid pink;
-width:60%;
-display: flex;
-justify-content: space-evenly;
+    border:solid black;
+    width:60%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
 }
 .topPic{
     width:100%;
     height:100%;
 }
 .product{
-    border:solid orange;
+    border:solid black;
     height:350px;
     width:30%;
     margin:10px;
 }
 .leftImage{
-    border:solid grey;
+    border:solid black;
     width:30%;
 }
 .textContainer{
@@ -66,7 +75,10 @@ justify-content: space-evenly;
 }
 .tabs{
     border: solid black;
-    border-radius: 22px;
-    border-width: 0.2px;
+    border-radius: 40px;
+    border-width: 0.5px;
+    text-align: center;
+    height: 40px;
+    
     
 }

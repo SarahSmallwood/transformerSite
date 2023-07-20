@@ -35,7 +35,7 @@
                     pic: "https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=723&q=80"
                 },
             ],
-            textDescription: 'Update your everyday wardrobe with our collection of men’s pants. Discover tailored suit pants for work or special occasions, as well as comfier sweatpants and joggers for downtime. Mix up your weekend look and swap the jeans for a pair of cargo pants or chinos. Browse a range of colors, from neutral blacks and grays to brighter shades and prints. Find everything from soft breathable cotton to functional track pants and luxe velvet dress pants.',
+            textDescription: 'Update your everyday wardrobe with our collection of mens pants. Discover tailored suit pants for work or special occasions, as well as comfier sweatpants and joggers for downtime. Mix up your weekend look and swap the jeans for a pair of cargo pants or chinos. Browse a range of colors, from neutral blacks and grays to brighter shades and prints. Find everything from soft breathable cotton to functional track pants and luxe velvet dress pants.',
             lowImage: 'https://images.unsplash.com/photo-1516826957135-700dedea698c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
         },
         womens: {
@@ -67,7 +67,7 @@
                     pic: "https://images.unsplash.com/photo-1619473918387-2710c35e3bf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
                 },
             ],
-            textDescription: 'Refresh your daily rotation with our women’s clothing range. With the freshest styles available all in one place, you can expect everyday basics, like womens tops and skirts, as well as must-have knitwear and cozy loungewear for downtime days.',
+            textDescription: 'Refresh your daily rotation with our womens clothing range. With the freshest styles available all in one place, you can expect everyday basics, like womens tops and skirts, as well as must-have knitwear and cozy loungewear for downtime days.',
             lowImage: 'https://images.unsplash.com/photo-1548624313-0396c75e4b1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
         },
         kids: {
@@ -112,96 +112,144 @@ let textBox= document.querySelector('.textContainer')
 
 
 
-const changeAll = () => {
-    changeTopPic()
-    changeOptions()
-    product()
-}
-    const changeTopPic = () =>{
-        // createImage 
-        let newimage = document.createElement('img')
-            newimage.setAttribute('src', majorContainer.mens.headImage)
+const changeAll = (category) => {
+    console.log(category)
+
+    if (category === 'Mens') {
+        console.log('Mens')
+        let newimage = document.createElement('img');
+            newimage.setAttribute('src', majorContainer.mens.headImage);
             newimage.setAttribute('class','topPic')
         // replaceWith current
         mainImage.replaceWith(newimage)
-
-    }
-
-    const changeOptions = () =>{
         majorContainer.mens.optionTags.forEach((tagname)=>{
             // CREATE ELE
             let txt = document.createElement('div')
             txt.innerHTML = tagname
             // REPLACE ELEMENT WITH NEW ELEMENT
             option.append(txt)
-        })
-    }
-
-    const product= () => {
+        });
         majorContainer.mens.productImages.forEach((obj)=>{
             let shopBox  = document.createElement('img')
             shopBox.setAttribute('src',obj.pic)
             shopBox.setAttribute('class','product')
             productBox.append(shopBox)
-        })
-        
-    }
-    const changeTopPic = () =>{
-        // createImage 
+        });
+    } else if (category === 'Womens') {
+        console.log('Womens')
         let newimage = document.createElement('img')
-            newimage.setAttribute('src', majorContainer.womens.headImage)
-            newimage.setAttribute('class','topPic')
-        // replaceWith current
+        newimage.setAttribute('src', majorContainer.womens.headImage)
+        newimage.setAttribute('class','topPic')
+    // replaceWith current
         mainImage.replaceWith(newimage)
-
-    }
-
-    const changeOptions = () =>{
         majorContainer.womens.optionTags.forEach((tagname)=>{
             // CREATE ELE
             let txt = document.createElement('div')
             txt.innerHTML = tagname
             // REPLACE ELEMENT WITH NEW ELEMENT
             option.append(txt)
-        })
-    }
-
-    const product= () => {
+        });
         majorContainer.womens.productImages.forEach((obj)=>{
             let shopBox  = document.createElement('img')
             shopBox.setAttribute('src',obj.pic)
             shopBox.setAttribute('class','product')
             productBox.append(shopBox)
-        })
-        
-    }
-    const changeTopPic = () =>{
-        // createImage 
+        });
+    } else {
+        console.log('Kids')
         let newimage = document.createElement('img')
-            newimage.setAttribute('src', majorContainer.kids.headImage)
-            newimage.setAttribute('class','topPic')
-        // replaceWith current
+        newimage.setAttribute('src', majorContainer.kids.headImage)
+        newimage.setAttribute('class','topPic')
+            // replaceWith current
         mainImage.replaceWith(newimage)
-
-    }
-
-    const changeOptions = () =>{
         majorContainer.kids.optionTags.forEach((tagname)=>{
             // CREATE ELE
             let txt = document.createElement('div')
             txt.innerHTML = tagname
             // REPLACE ELEMENT WITH NEW ELEMENT
             option.append(txt)
-        })
-    }
-
-    const product= () => {
+        });
         majorContainer.kids.productImages.forEach((obj)=>{
             let shopBox  = document.createElement('img')
             shopBox.setAttribute('src',obj.pic)
             shopBox.setAttribute('class','product')
             productBox.append(shopBox)
-        })
-        
+        });
+
     }
+};
+
+    // changeTopPic = () => {
+    //     const changeTopPic = () =>{
+    //     // createImage 
+    //     console.log("sadasd")
+    //     let newimage = document.createElement('img');
+    //         newimage.setAttribute('src', majorContainer.mens.headImage);
+    //         newimage.setAttribute('class','topPic')
+    //     // replaceWith current
+    //     mainImage.replaceWith(newimage)
+
+    // };
+        // let newimage = document.createElement('img')
+        //     newimage.setAttribute('src', majorContainer.womens.headImage)
+        //     newimage.setAttribute('class','topPic')
+        // // replaceWith current
+        // mainImage.replaceWith(newimage)
+
+    
+    // let newimage = document.createElement('img')
+    // newimage.setAttribute('src', majorContainer.kids.headImage)
+    // newimage.setAttribute('class','topPic')
+    //     // replaceWith current
+    // mainImage.replaceWith(newimage)
+
+    
+    // changeOptions = () => {
+    //     const changeOptions = () =>{
+    //         majorContainer.optionTags.forEach((tagname)=>{
+    //             // CREATE ELE
+    //             let txt = document.createElement('div')
+    //             txt.innerHTML = tagname
+    //             // REPLACE ELEMENT WITH NEW ELEMENT
+    //             option.append(txt)
+    //         });
+    //         majorContainer.womens.optionTags.forEach((tagname)=>{
+    //             // CREATE ELE
+    //             let txt = document.createElement('div')
+    //             txt.innerHTML = tagname
+    //             // REPLACE ELEMENT WITH NEW ELEMENT
+    //             option.append(txt)
+    //         });
+    //         majorContainer.kids.optionTags.forEach((tagname)=>{
+    //             // CREATE ELE
+    //             let txt = document.createElement('div')
+    //             txt.innerHTML = tagname
+    //             // REPLACE ELEMENT WITH NEW ELEMENT
+    //             option.append(txt)
+    //         });
+
+    //     }
+    // }
+    // changeProduct = () => {
+    //     const product= () => {
+    //         majorContainer.productImages.forEach((obj)=>{
+    //             let shopBox  = document.createElement('img')
+    //             shopBox.setAttribute('src',obj.pic)
+    //             shopBox.setAttribute('class','product')
+    //             productBox.append(shopBox)
+    //         });
+    //     }
+    // }
+    //         majorContainer.womens.productImages.forEach((obj)=>{
+    //             let shopBox  = document.createElement('img')
+    //             shopBox.setAttribute('src',obj.pic)
+    //             shopBox.setAttribute('class','product')
+    //             productBox.append(shopBox)
+    //         });
+    //         majorContainer.kids.productImages.forEach((obj)=>{
+    //             let shopBox  = document.createElement('img')
+    //             shopBox.setAttribute('src',obj.pic)
+    //             shopBox.setAttribute('class','product')
+    //             productBox.append(shopBox)
+    //         });
 
